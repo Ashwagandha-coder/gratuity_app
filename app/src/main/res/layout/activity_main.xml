@@ -4,15 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
+    <EditText
+        android:id="@+id/et_gratuity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:hint="@string/enter_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="">
+
+    </EditText>
+
     <TextView
+        android:id="@+id/tv_chooseRadioBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/et_gratuity"
+        android:text="@string/how_was_a_gratuity">
+
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/type_gratuity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:checkedButton="@id/amazing_Rbtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_chooseRadioBtn">
+
+        <RadioButton
+            android:id="@+id/amazing_Rbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/amazing_20">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/good_Rbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/good_18">
+
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/ok_Rbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_15">
+
+        </RadioButton>
+
+
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/switch_round"
+        android:checked="true"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/round_numbers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/type_gratuity"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml">
+
+    </Switch>
+
+    <Button
+        android:id="@+id/main_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/payment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/switch_round"
+        app:layout_constraintEnd_toEndOf="parent">
+
+    </Button>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_btn"
+        tools:text="@string/gratuity_result">
+
+    </TextView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
