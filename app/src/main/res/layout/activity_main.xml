@@ -77,14 +77,27 @@
     </Switch>
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/main_btn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/payment"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/switch_round"
-        android:shadowColor="@color/purple_200">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/yellow"
+        >
 
     </Button>
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_btn"
+        android:text="Gratuity: $s">
+
+    </TextView>
 
 
 
